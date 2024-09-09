@@ -25,17 +25,11 @@ public class MonthData {
         return max;
     }
 
-    // Green
-    // Метод работает при всех возможных случаев и не дает сбоев! Молодец :)
-
-    // Yellow
-    // Название переменной "goalsBystepsPerDay"
-    // не удовлетворяет соглашению LowerCamelCase
-    int bestSeries(int goalsBystepsPerDay){
+    int bestSeries(int goalsByStepsPerDay){
         int currentSeries = 0;
         int finalSeries = 0;
         for (int i = 0; i < days.length; i ++){
-            if (days[i] >= goalsBystepsPerDay){
+            if (days[i] >= goalsByStepsPerDay){
                 currentSeries += 1;
                 if (currentSeries > finalSeries)
                     finalSeries = currentSeries;

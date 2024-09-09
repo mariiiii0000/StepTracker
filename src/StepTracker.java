@@ -3,6 +3,7 @@ public class StepTracker {
     Scanner scanner;
     MonthData[] monthToData = new MonthData[12];
     Converter converter = new Converter();
+    int goalsBystepsPerDay = 10000;
 
     StepTracker(Scanner scan){
         scanner = scan;
@@ -32,10 +33,6 @@ public class StepTracker {
         }
     }
 
-    // Red
-    // Принято поля группировать вместе в классе вначале
-    // Сначала поля, потом все остальные методы
-    int goalsBystepsPerDay = 10000;
 
     void changeStepGoal(){
         System.out.println("Введите новую цель: ");
@@ -49,16 +46,19 @@ public class StepTracker {
     void printStatistic(){
         System.out.println("Введите номер месяца: ");
         int month = scanner.nextInt();
-        // Red
-        // Программа вылетит с исключением, если пользователь введет некорректный месяц
-        MonthData monthData = monthToData[month - 1];
-        monthData.printDaysAndStepsFromMonth();
-        System.out.println("Сумма шагов за месяц: " + monthData.sumStepsFromMonth());
-        System.out.println("Максимальное количество шагов за месяц: " + monthData.maxStep());
-        System.out.println("Сколько килокалорий было сожжено: " + converter.convertStepsToKilo(monthData.sumStepsFromMonth()));
-        System.out.println("Пройденное количество шагов в км: " + converter.convertToKm(monthData.sumStepsFromMonth()));
-        System.out.println("Лучшая серия: "+ monthData.bestSeries(goalsBystepsPerDay));
-        System.out.println("Всё)) " );
+        if (month <= 12 && month > 0){
+            MonthData monthData = monthToData[month - 1];
+            monthData.printDaysAndStepsFromMonth();
+            System.out.println("Сумма шагов за месяц: " + monthData.sumStepsFromMonth());
+            System.out.println("Максимальное количество шагов за месяц: " + monthData.maxStep());
+            System.out.println("Сколько килокалорий было сожжено: " + converter.convertStepsToKilo(monthData.sumStepsFromMonth()));
+            System.out.println("Пройденное количество шагов в км: " + converter.convertToKm(monthData.sumStepsFromMonth()));
+            System.out.println("Лучшая серия: "+ monthData.bestSeries(goalsBystepsPerDay));
+            System.out.println("Всё)) " );
+
+        } else {
+            System.out.println("))))))))))))))))");
+        }
 
     }
 
