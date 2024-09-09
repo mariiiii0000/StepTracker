@@ -3,7 +3,7 @@ public class StepTracker {
     Scanner scanner;
     MonthData[] monthToData = new MonthData[12];
     Converter converter = new Converter();
-    int goalsBystepsPerDay = 10000;
+    int goalsByStepsPerDay = 10000;
 
     StepTracker(Scanner scan){
         scanner = scan;
@@ -36,8 +36,8 @@ public class StepTracker {
 
     void changeStepGoal(){
         System.out.println("Введите новую цель: ");
-        goalsBystepsPerDay = scanner.nextInt();
-        if (goalsBystepsPerDay < 0) {
+        goalsByStepsPerDay = scanner.nextInt();
+        if (goalsByStepsPerDay < 0) {
             System.out.println("Naaaahh");
 
         }
@@ -53,7 +53,7 @@ public class StepTracker {
             System.out.println("Максимальное количество шагов за месяц: " + monthData.maxStep());
             System.out.println("Сколько килокалорий было сожжено: " + converter.convertStepsToKilo(monthData.sumStepsFromMonth()));
             System.out.println("Пройденное количество шагов в км: " + converter.convertToKm(monthData.sumStepsFromMonth()));
-            System.out.println("Лучшая серия: "+ monthData.bestSeries(goalsBystepsPerDay));
+            System.out.println("Лучшая серия: "+ monthData.bestSeries(goalsByStepsPerDay));
             System.out.println("Всё)) " );
 
         } else {
