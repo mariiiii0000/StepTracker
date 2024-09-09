@@ -21,10 +21,16 @@ public class MonthData {
                 max = days[i];
 
             }
-
         }
         return max;
     }
+
+    // Green
+    // Метод работает при всех возможных случаев и не дает сбоев! Молодец :)
+
+    // Yellow
+    // Название переменной "goalsBystepsPerDay"
+    // не удовлетворяет соглашению LowerCamelCase
     int bestSeries(int goalsBystepsPerDay){
         int currentSeries = 0;
         int finalSeries = 0;

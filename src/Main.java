@@ -1,9 +1,16 @@
 import java.util.Scanner;
 
+// Green
+// Очень здорово, что ни в одном классе нет лишних импортов
+// или лишних комментариев, молодец!
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         StepTracker tracker = new StepTracker(scanner);
+        // Red
+        // Созданный объект создан, но нигде не используется
+        // Надо удалить строку и стараться избегать создания лишних объектов
         MonthData data = new MonthData();
         while (true) {
             System.out.println("Выберите действие:");
@@ -22,10 +29,7 @@ public class Main {
             } else {
                 System.out.println("Такой команды нет(((");
             }
-
-
         }
-
     }
     public static void printMenu(){
 

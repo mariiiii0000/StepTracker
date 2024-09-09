@@ -31,7 +31,12 @@ public class StepTracker {
             System.out.println("Что-то не то((");
         }
     }
+
+    // Red
+    // Принято поля группировать вместе в классе вначале
+    // Сначала поля, потом все остальные методы
     int goalsBystepsPerDay = 10000;
+
     void changeStepGoal(){
         System.out.println("Введите новую цель: ");
         goalsBystepsPerDay = scanner.nextInt();
@@ -40,9 +45,12 @@ public class StepTracker {
 
         }
     }
+
     void printStatistic(){
         System.out.println("Введите номер месяца: ");
         int month = scanner.nextInt();
+        // Red
+        // Программа вылетит с исключением, если пользователь введет некорректный месяц
         MonthData monthData = monthToData[month - 1];
         monthData.printDaysAndStepsFromMonth();
         System.out.println("Сумма шагов за месяц: " + monthData.sumStepsFromMonth());
