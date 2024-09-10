@@ -12,6 +12,7 @@ public class StepTracker {
             monthToData[i] = new MonthData();
         }
     }
+    //Green! Всё идеально молодец! pipipupu
     void addNewNumberStepsPerDay(){
         System.out.println("Введите номер месяца: ");
         int monthNumber = scanner.nextInt();
@@ -37,9 +38,10 @@ public class StepTracker {
     void changeStepGoal(){
         System.out.println("Введите новую цель: ");
         goalsByStepsPerDay = scanner.nextInt();
-        if (goalsByStepsPerDay < 0) {
+        if (goalsByStepsPerDay > 0) {
+            System.out.println("Цель успешно сохранена!! Ваша цель - " + goalsByStepsPerDay );
+        } else {
             System.out.println("Naaaahh");
-
         }
     }
 
