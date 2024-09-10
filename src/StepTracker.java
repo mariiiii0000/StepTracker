@@ -37,8 +37,9 @@ public class StepTracker {
 
     void changeStepGoal(){
         System.out.println("Введите новую цель: ");
-        goalsByStepsPerDay = scanner.nextInt();
-        if (goalsByStepsPerDay > 0) {
+        int steps = scanner.nextInt();
+        if (steps > 0) {
+            goalsByStepsPerDay = steps;
             System.out.println("Цель успешно сохранена!! Ваша цель - " + goalsByStepsPerDay );
         } else {
             System.out.println("Naaaahh");
